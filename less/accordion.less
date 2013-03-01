@@ -6,13 +6,14 @@
 // Parent container
 .accordion {
   margin-bottom: @baseLineHeight;
+  border-bottom: 1px solid @gray; //ratio
 }
 
 // Group == heading + body
 .accordion-group {
-  margin-bottom: 2px;
-  border: 1px solid #e5e5e5;
-  .border-radius(@baseBorderRadius);
+  //margin-bottom: 2px; //ratio
+  border-top: 1px solid @gray; //ratio
+  .border-radius(0); //ratio
 }
 .accordion-heading {
   border-bottom: 0;
@@ -30,5 +31,5 @@
 // Inner needs the styles because you can't animate properly with any styles on the element
 .accordion-inner {
   padding: 9px 15px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid @gray; //ratio
 }
