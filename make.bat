@@ -25,10 +25,10 @@ if not exist ".\bootstrap\fonts" md .\bootstrap\fonts
 
 copy /Y  .\fonts\* .\bootstrap\fonts\>nul
 
-call recess --compile %BOOTSTRAP_LESS% > .\bootstrap\css\bootstrap.css
-call recess --compress %BOOTSTRAP_LESS% > .\bootstrap\css\bootstrap.min.css
+call lessc %BOOTSTRAP_LESS% > .\bootstrap\css\bootstrap.css
+call lessc --compress %BOOTSTRAP_LESS% > .\bootstrap\css\bootstrap.min.css
 
-copy /B .\js\bootstrap-transition.js+.\js\bootstrap-alert.js+.\js\bootstrap-button.js+.\js\bootstrap-carousel.js+.\js\bootstrap-collapse.js+.\js\bootstrap-dropdown.js+.\js\bootstrap-modal.js+.\js\bootstrap-tooltip.js+.\js\bootstrap-popover.js+.\js\bootstrap-scrollspy.js+.\js\bootstrap-tab.js+.\js\bootstrap-typeahead.js+.\js\bootstrap-affix.js .\bootstrap\js\bootstrap.js>nul
+copy /B .\js\transition.js+.\js\alert.js+.\js\button.js+.\js\carousel.js+.\js\collapse.js+.\js\dropdown.js+.\js\modal.js+.\js\tooltip.js+.\js\popover.js+.\js\scrollspy.js+.\js\tab.js+.\js\affix.js .\bootstrap\js\bootstrap.js>nul
 call uglifyjs -nc .\bootstrap\js\bootstrap.js > .\bootstrap\js\bootstrap.min.tmp.js
 (
 echo /** && ^
